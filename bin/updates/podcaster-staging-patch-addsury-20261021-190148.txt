@@ -1,0 +1,257 @@
+===== ip-172-31-46-84 — 2026-10-21 17:01:49 — APPLY =====
+
+## 1. Stato attuale
+  php8.4       PHP 8.4.26 (cli) (built: Sep 24 2026 17:15:37) (NTS)
+  php-fpm8.4   PHP 8.4.26 (fpm-fcgi) (built: Sep 24 2026 17:15:37) (NTS)
+
+## 2. Repository Ondřej
+aggiunto /etc/apt/sources.list.d/lgt-sury-php.list (chiave 15058500A0235D97F5D10063B188E2B695BD4743)
+aggiunto /etc/apt/preferences.d/lgt-sury-php.pref (priorità 600 a packages.sury.org)
+  /etc/apt/sources.list.d/lgt-sury-php.list
+  /etc/apt/sources.list.d/ondrej-ubuntu-apache2-noble.sources
+  /etc/apt/sources.list.d/ondrej-ubuntu-php-noble.sources
+--- apt-get update (solo Ondřej), tentativo 1/5 ---
+Get:1 https://packages.sury.org/php noble InRelease [6112 B]
+Get:2 https://packages.sury.org/php noble/main amd64 Packages [144 kB]
+Ign:3 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+Ign:4 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble InRelease
+Hit:3 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+Get:4 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble InRelease [24.3 kB]
+Ign:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages
+Ign:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages
+Ign:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages
+Ign:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages
+Err:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages
+  503  Service Unavailable [IP: 185.125.189.187 443]
+Ign:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages
+Err:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages
+  503  Service Unavailable [IP: 185.125.189.187 443]
+Ign:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages
+Err:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages
+  503  Service Unavailable [IP: 185.125.189.187 443]
+Fetched 174 kB in 1min 21s (2152 B/s)
+Reading package lists...
+W: Failed to fetch https://ppa.launchpadcontent.net/ondrej/php/ubuntu/dists/noble/main/binary-amd64/Packages  503  Service Unavailable [IP: 185.125.189.187 443]
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+tentativo 1: errori (vedi sopra), riprovo tra 30s
+--- apt-get update (solo Ondřej), tentativo 2/5 ---
+Hit:1 https://packages.sury.org/php noble InRelease
+Ign:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+Get:3 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble InRelease [24.3 kB]
+Ign:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+Ign:4 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages
+Ign:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+Get:4 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages [200 kB]
+Err:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+  503  Service Unavailable [IP: 185.125.189.188 443]
+Fetched 200 kB in 41s (4921 B/s)
+Reading package lists...
+W: Failed to fetch https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu/dists/noble/InRelease  503  Service Unavailable [IP: 185.125.189.188 443]
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+tentativo 2: errori (vedi sopra), riprovo tra 30s
+--- apt-get update (solo Ondřej), tentativo 3/5 ---
+Hit:1 https://packages.sury.org/php noble InRelease
+Ign:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+Ign:3 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble InRelease
+Ign:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+Ign:3 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble InRelease
+Ign:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+Get:3 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble InRelease [24.3 kB]
+Err:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+  503  Service Unavailable [IP: 185.125.189.186 443]
+Fetched 24.3 kB in 41s (587 B/s)
+Reading package lists...
+W: Failed to fetch https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu/dists/noble/InRelease  503  Service Unavailable [IP: 185.125.189.186 443]
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+tentativo 3: errori (vedi sopra), riprovo tra 30s
+--- apt-get update (solo Ondřej), tentativo 4/5 ---
+Hit:1 https://packages.sury.org/php noble InRelease
+Ign:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+Get:3 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble InRelease [24.3 kB]
+Ign:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+Ign:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+Err:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+  503  Service Unavailable [IP: 185.125.189.188 443]
+Fetched 24.3 kB in 32s (749 B/s)
+Reading package lists...
+W: Failed to fetch https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu/dists/noble/InRelease  503  Service Unavailable [IP: 185.125.189.188 443]
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+tentativo 4: errori (vedi sopra), riprovo tra 30s
+--- apt-get update (solo Ondřej), tentativo 5/5 ---
+Hit:1 https://packages.sury.org/php noble InRelease
+Hit:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu noble InRelease
+Get:3 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble InRelease [24.3 kB]
+Fetched 24.3 kB in 11s (2217 B/s)
+Reading package lists...
+indici aggiornati (tentativo 5)
+
+## 3. Pacchetti
+PHP + estensioni incluse: libapache2-mod-php8.4 php-common php8.4 php8.4-bz2 php8.4-cli php8.4-common php8.4-curl php8.4-fpm php8.4-gd php8.4-intl php8.4-mbstring php8.4-mysql php8.4-opcache php8.4-pgsql php8.4-readline php8.4-xml php8.4-zip
+PECL (non bloccanti):    nessuna
+  PHP 8.4  installato 8.4.26-1+ubuntu24.04.1+deb.sury.org+1         disponibile 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9
+Simulazione:
+  Inst php-common [2:101~+ubuntu24.04.1+deb.sury.org+1] (2:101+0~20261021.78+ubuntu24.04~1.gbp53f25f noble [all])
+  Inst php8.4-zip [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-xml [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-readline [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-pgsql [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-opcache [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-mysql [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-mbstring [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-intl [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-gd [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-fpm [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-curl [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-bz2 [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst libapache2-mod-php8.4 [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-cli [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64]) []
+  Inst php8.4-common [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [amd64])
+  Inst php8.4 [8.4.26-1+ubuntu24.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 noble [all])
+
+## 4. Installazione
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  libfwupd2 libgusb2
+Use 'sudo apt autoremove' to remove them.
+Suggested packages:
+  php-pear
+The following packages will be upgraded:
+  libapache2-mod-php8.4 php-common php8.4 php8.4-bz2 php8.4-cli php8.4-common
+  php8.4-curl php8.4-fpm php8.4-gd php8.4-intl php8.4-mbstring php8.4-mysql
+  php8.4-opcache php8.4-pgsql php8.4-readline php8.4-xml php8.4-zip
+17 upgraded, 0 newly installed, 0 to remove and 9 not upgraded.
+Need to get 9115 kB of archives.
+After this operation, 165 kB of additional disk space will be used.
+Get:1 https://packages.sury.org/php noble/main amd64 php-common all 2:101+0~20261021.78+ubuntu24.04~1.gbp53f25f [14.2 kB]
+Get:2 https://packages.sury.org/php noble/main amd64 php8.4-zip amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [31.5 kB]
+Get:3 https://packages.sury.org/php noble/main amd64 php8.4-xml amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [681 kB]
+Get:4 https://packages.sury.org/php noble/main amd64 php8.4-readline amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [14.0 kB]
+Get:5 https://packages.sury.org/php noble/main amd64 php8.4-pgsql amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [77.2 kB]
+Get:6 https://packages.sury.org/php noble/main amd64 php8.4-opcache amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [498 kB]
+Get:7 https://packages.sury.org/php noble/main amd64 php8.4-mysql amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [129 kB]
+Get:8 https://packages.sury.org/php noble/main amd64 php8.4-mbstring amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [521 kB]
+Get:9 https://packages.sury.org/php noble/main amd64 php8.4-intl amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [173 kB]
+Get:10 https://packages.sury.org/php noble/main amd64 php8.4-gd amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [38.6 kB]
+Get:11 https://packages.sury.org/php noble/main amd64 php8.4-fpm amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [2025 kB]
+Get:12 https://packages.sury.org/php noble/main amd64 php8.4-curl amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [43.4 kB]
+Get:13 https://packages.sury.org/php noble/main amd64 php8.4-bz2 amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [11.8 kB]
+Get:14 https://packages.sury.org/php noble/main amd64 libapache2-mod-php8.4 amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [1950 kB]
+Get:15 https://packages.sury.org/php noble/main amd64 php8.4-cli amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [2018 kB]
+Get:16 https://packages.sury.org/php noble/main amd64 php8.4-common amd64 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [829 kB]
+Get:17 https://packages.sury.org/php noble/main amd64 php8.4 all 8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9 [59.7 kB]
+Fetched 9115 kB in 0s (73.0 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 136852 files and directories currently installed.)
+Preparing to unpack .../00-php-common_2%3a101+0~20261021.78+ubuntu24.04~1.gbp53f25f_all.deb ...
+Unpacking php-common (2:101+0~20261021.78+ubuntu24.04~1.gbp53f25f) over (2:101~+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../01-php8.4-zip_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-zip (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../02-php8.4-xml_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-xml (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../03-php8.4-readline_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-readline (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../04-php8.4-pgsql_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-pgsql (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../05-php8.4-opcache_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-opcache (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../06-php8.4-mysql_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-mysql (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../07-php8.4-mbstring_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-mbstring (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../08-php8.4-intl_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-intl (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../09-php8.4-gd_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-gd (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../10-php8.4-fpm_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-fpm (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../11-php8.4-curl_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-curl (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../12-php8.4-bz2_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-bz2 (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../13-libapache2-mod-php8.4_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking libapache2-mod-php8.4 (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../14-php8.4-cli_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-cli (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../15-php8.4-common_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-common (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Preparing to unpack .../16-php8.4_8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9_all.deb ...
+Unpacking php8.4 (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) over (8.4.26-1+ubuntu24.04.1+deb.sury.org+1) ...
+Setting up php-common (2:101+0~20261021.78+ubuntu24.04~1.gbp53f25f) ...
+Setting up php8.4-common (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up php8.4-gd (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up php8.4-curl (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up php8.4-pgsql (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up php8.4-zip (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up php8.4-bz2 (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up php8.4-xml (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up php8.4-opcache (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up php8.4-intl (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up php8.4-readline (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up php8.4-mbstring (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up php8.4-mysql (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up php8.4-cli (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Setting up libapache2-mod-php8.4 (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+libapache2-mod-php8.4: not switching MPM - already enabled
+Setting up php8.4-fpm (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+NOTICE: Not enabling PHP 8.4 FPM by default.
+NOTICE: To enable PHP 8.4 FPM in Apache2 do:
+NOTICE: a2enmod proxy_fcgi setenvif
+NOTICE: a2enconf php8.4-fpm
+NOTICE: You are seeing this message because you have apache2 package installed.
+Setting up php8.4 (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for php8.4-cli (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Processing triggers for libapache2-mod-php8.4 (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+Processing triggers for php8.4-fpm (8.4.27-1+0~20261021.57+ubuntu24.04~1.gbp7636b9) ...
+NOTICE: Not enabling PHP 8.4 FPM by default.
+NOTICE: To enable PHP 8.4 FPM in Apache2 do:
+NOTICE: a2enmod proxy_fcgi setenvif
+NOTICE: a2enconf php8.4-fpm
+NOTICE: You are seeing this message because you have apache2 package installed.
+
+Pending kernel upgrade!
+Running kernel version:
+  7.0.0-1010-aws
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 7.0.0-1014-aws.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting.
+
+Restarting services...
+ systemctl restart apache2.service supervisor.service
+
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart getty@tty1.service
+ systemctl restart networkd-dispatcher.service
+ systemctl restart serial-getty@ttyS0.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+
+## 5. Riavvii
+apache2 riavviato (mod_php)
+laravel-podcaster:laravel-podcaster_00: stopped
+laravel-podcaster:laravel-podcaster_01: stopped
+laravel-podcaster:laravel-podcaster_02: stopped
+laravel-podcaster:laravel-podcaster_03: stopped
+laravel-podcaster:laravel-podcaster_00: started
+laravel-podcaster:laravel-podcaster_01: started
+laravel-podcaster:laravel-podcaster_02: started
+laravel-podcaster:laravel-podcaster_03: started
+supervisor: restart all
+
+## 6. Verifica
+OK    PHP 8.4: changelog cita i CVE
+  php8.4       PHP 8.4.27 (cli) (built: Oct 21 2026 08:19:33) (NTS)
+  php-fpm8.4   PHP 8.4.27 (fpm-fcgi) (built: Oct 21 2026 08:19:33) (NTS)
+OK    stesse estensioni caricate di prima
+OK    nessun processo sul PHP vecchio
+
+===== ip-172-31-46-84: AGGIORNATO =====

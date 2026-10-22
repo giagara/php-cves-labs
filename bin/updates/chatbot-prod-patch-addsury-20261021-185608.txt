@@ -1,0 +1,345 @@
+===== ip-10-10-10-138 — 2026-10-21 16:56:10 — APPLY =====
+
+## 1. Stato attuale
+  php8.3       PHP 8.3.35 (cli) (built: Sep 25 2026 05:16:32) (NTS)
+  php-fpm8.3   PHP 8.3.35 (fpm-fcgi) (built: Sep 25 2026 05:16:32)
+  php8.4       PHP 8.4.26 (cli) (built: Sep 24 2026 17:15:18) (NTS)
+  php-fpm8.4   PHP 8.4.26 (fpm-fcgi) (built: Sep 24 2026 17:15:18) (NTS)
+
+## 2. Repository Ondřej
+aggiunto /etc/apt/sources.list.d/lgt-sury-php.list (chiave 15058500A0235D97F5D10063B188E2B695BD4743)
+aggiunto /etc/apt/preferences.d/lgt-sury-php.pref (priorità 600 a packages.sury.org)
+  /etc/apt/sources.list.d/lgt-sury-php.list
+  /etc/apt/sources.list.d/ondrej-ubuntu-apache2-jammy.list
+  /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list
+--- apt-get update (solo Ondřej), tentativo 1/5 ---
+Get:1 https://packages.sury.org/php jammy InRelease [6112 B]
+Get:2 https://packages.sury.org/php jammy/main amd64 Packages [145 kB]
+Ign:3 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu jammy InRelease
+Ign:4 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Ign:3 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu jammy InRelease
+Get:4 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease [24.6 kB]
+Ign:3 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu jammy InRelease
+Ign:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 Packages
+Ign:6 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main Translation-en
+Err:3 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu jammy InRelease
+  503  Service Unavailable [IP: 185.125.189.186 443]
+Get:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 Packages [210 kB]
+Ign:6 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main Translation-en
+Ign:6 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main Translation-en
+Ign:6 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main Translation-en
+Get:6 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main Translation-en [47.5 kB]
+Err:6 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main Translation-en
+  File has unexpected size (47480 != 47468). Mirror sync in progress? [IP: 185.125.189.187 443]
+  Hashes of expected file:
+   - Filesize:47468 [weak]
+   - SHA256:4e0d33267178ce0da528343252db28685a8c689d4e396362e981054b3718cbc7
+   - SHA1:3257eb8e75d53cc86f07c555e56d2deda9cf11ee [weak]
+   - MD5Sum:944c4e825960d158c260efafe4f26a41 [weak]
+  Release file created at: Wed, 21 Oct 2026 16:09:09 +0000
+Fetched 385 kB in 1min 18s (4948 B/s)
+Reading package lists...
+W: Failed to fetch https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu/dists/jammy/InRelease  503  Service Unavailable [IP: 185.125.189.186 443]
+E: Failed to fetch https://ppa.launchpadcontent.net/ondrej/php/ubuntu/dists/jammy/main/i18n/Translation-en.xz  File has unexpected size (47480 != 47468). Mirror sync in progress? [IP: 185.125.189.187 443]
+   Hashes of expected file:
+    - Filesize:47468 [weak]
+    - SHA256:4e0d33267178ce0da528343252db28685a8c689d4e396362e981054b3718cbc7
+    - SHA1:3257eb8e75d53cc86f07c555e56d2deda9cf11ee [weak]
+    - MD5Sum:944c4e825960d158c260efafe4f26a41 [weak]
+   Release file created at: Wed, 21 Oct 2026 16:09:09 +0000
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+tentativo 1: errori (vedi sopra), riprovo tra 30s
+--- apt-get update (solo Ondřej), tentativo 2/5 ---
+Hit:1 https://packages.sury.org/php jammy InRelease
+Ign:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu jammy InRelease
+Ign:3 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Ign:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu jammy InRelease
+Get:3 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease [24.6 kB]
+Ign:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu jammy InRelease
+Get:4 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 Packages [210 kB]
+Get:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main Translation-en [47.5 kB]
+Hit:2 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu jammy InRelease
+Fetched 47.5 kB in 39s (1216 B/s)
+Reading package lists...
+indici aggiornati (tentativo 2)
+
+## 3. Pacchetti
+PHP + estensioni incluse: libapache2-mod-php8.3 php-common php8.3 php8.3-bz2 php8.3-cli php8.3-common php8.3-curl php8.3-fpm php8.3-gd php8.3-intl php8.3-mbstring php8.3-opcache php8.3-pgsql php8.3-readline php8.3-xml php8.3-zip php8.4-bcmath php8.4-cli php8.4-common php8.4-curl php8.4-fpm php8.4-gd php8.4-intl php8.4-mbstring php8.4-mysql php8.4-opcache php8.4-pgsql php8.4-readline php8.4-xml php8.4-zip
+PECL (non bloccanti):    nessuna
+  PHP 8.3  installato 8.3.35-1+ubuntu22.04.1+deb.sury.org+1         disponibile 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c
+  PHP 8.4  installato 8.4.26-1+ubuntu22.04.1+deb.sury.org+1         disponibile 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9
+Simulazione:
+  Inst php-common [2:101~+ubuntu22.04.1+deb.sury.org+1] (2:101+0~20261021.78+ubuntu22.04~1.gbp53f25f jammy [all])
+  Inst php8.3-zip [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst php8.3-xml [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst php8.3-readline [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst php8.3-pgsql [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst php8.3-opcache [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst php8.3-mbstring [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst php8.3-intl [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst php8.3-gd [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst php8.3-fpm [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst php8.3-curl [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst php8.3-bz2 [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst libapache2-mod-php8.3 [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst php8.3-cli [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64]) []
+  Inst php8.3-common [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [amd64])
+  Inst php8.3 [8.3.35-1+ubuntu22.04.1+deb.sury.org+1] (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c jammy [all])
+  Inst php8.4-zip [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-xml [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-readline [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-pgsql [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-opcache [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-mysql [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-mbstring [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-intl [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-gd [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-cli [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-fpm [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-curl [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-bcmath [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64]) []
+  Inst php8.4-common [8.4.26-1+ubuntu22.04.1+deb.sury.org+1] (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 jammy [amd64])
+
+## 4. Installazione
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  debsuryorg-archive-keyring libgraphite2-3 libharfbuzz0b libraqm0
+Use 'sudo apt autoremove' to remove them.
+Suggested packages:
+  php-pear
+The following packages will be upgraded:
+  libapache2-mod-php8.3 php-common php8.3 php8.3-bz2 php8.3-cli php8.3-common
+  php8.3-curl php8.3-fpm php8.3-gd php8.3-intl php8.3-mbstring php8.3-opcache
+  php8.3-pgsql php8.3-readline php8.3-xml php8.3-zip php8.4-bcmath php8.4-cli
+  php8.4-common php8.4-curl php8.4-fpm php8.4-gd php8.4-intl php8.4-mbstring
+  php8.4-mysql php8.4-opcache php8.4-pgsql php8.4-readline php8.4-xml
+  php8.4-zip
+30 upgraded, 0 newly installed, 0 to remove and 8 not upgraded.
+Need to get 15.2 MB of archives.
+After this operation, 213 kB of additional disk space will be used.
+Get:1 https://packages.sury.org/php jammy/main amd64 php-common all 2:101+0~20261021.78+ubuntu22.04~1.gbp53f25f [17.8 kB]
+Get:2 https://packages.sury.org/php jammy/main amd64 php8.3-zip amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [30.7 kB]
+Get:3 https://packages.sury.org/php jammy/main amd64 php8.3-xml amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [132 kB]
+Get:4 https://packages.sury.org/php jammy/main amd64 php8.3-readline amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [13.5 kB]
+Get:5 https://packages.sury.org/php jammy/main amd64 php8.3-pgsql amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [66.2 kB]
+Get:6 https://packages.sury.org/php jammy/main amd64 php8.3-opcache amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [374 kB]
+Get:7 https://packages.sury.org/php jammy/main amd64 php8.3-mbstring amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [538 kB]
+Get:8 https://packages.sury.org/php jammy/main amd64 php8.3-intl amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [163 kB]
+Get:9 https://packages.sury.org/php jammy/main amd64 php8.3-gd amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [33.5 kB]
+Get:10 https://packages.sury.org/php jammy/main amd64 php8.3-fpm amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [1955 kB]
+Get:11 https://packages.sury.org/php jammy/main amd64 php8.3-curl amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [40.7 kB]
+Get:12 https://packages.sury.org/php jammy/main amd64 php8.3-bz2 amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [11.7 kB]
+Get:13 https://packages.sury.org/php jammy/main amd64 libapache2-mod-php8.3 amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [1881 kB]
+Get:14 https://packages.sury.org/php jammy/main amd64 php8.3-cli amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [1943 kB]
+Get:15 https://packages.sury.org/php jammy/main amd64 php8.3-common amd64 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [788 kB]
+Get:16 https://packages.sury.org/php jammy/main amd64 php8.3 all 8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c [55.3 kB]
+Get:17 https://packages.sury.org/php jammy/main amd64 php8.4-zip amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [32.4 kB]
+Get:18 https://packages.sury.org/php jammy/main amd64 php8.4-xml amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [707 kB]
+Get:19 https://packages.sury.org/php jammy/main amd64 php8.4-readline amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [14.0 kB]
+Get:20 https://packages.sury.org/php jammy/main amd64 php8.4-pgsql amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [79.4 kB]
+Get:21 https://packages.sury.org/php jammy/main amd64 php8.4-opcache amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [499 kB]
+Get:22 https://packages.sury.org/php jammy/main amd64 php8.4-mysql amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [134 kB]
+Get:23 https://packages.sury.org/php jammy/main amd64 php8.4-mbstring amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [546 kB]
+Get:24 https://packages.sury.org/php jammy/main amd64 php8.4-intl amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [178 kB]
+Get:25 https://packages.sury.org/php jammy/main amd64 php8.4-gd amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [40.3 kB]
+Get:26 https://packages.sury.org/php jammy/main amd64 php8.4-cli amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [2024 kB]
+Get:27 https://packages.sury.org/php jammy/main amd64 php8.4-fpm amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [2031 kB]
+Get:28 https://packages.sury.org/php jammy/main amd64 php8.4-curl amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [43.1 kB]
+Get:29 https://packages.sury.org/php jammy/main amd64 php8.4-bcmath amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [28.6 kB]
+Get:30 https://packages.sury.org/php jammy/main amd64 php8.4-common amd64 8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9 [838 kB]
+Fetched 15.2 MB in 0s (38.9 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 98817 files and directories currently installed.)
+Preparing to unpack .../00-php-common_2%3a101+0~20261021.78+ubuntu22.04~1.gbp53f25f_all.deb ...
+Unpacking php-common (2:101+0~20261021.78+ubuntu22.04~1.gbp53f25f) over (2:101~+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../01-php8.3-zip_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-zip (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../02-php8.3-xml_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-xml (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../03-php8.3-readline_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-readline (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../04-php8.3-pgsql_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-pgsql (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../05-php8.3-opcache_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-opcache (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../06-php8.3-mbstring_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-mbstring (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../07-php8.3-intl_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-intl (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../08-php8.3-gd_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-gd (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../09-php8.3-fpm_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-fpm (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../10-php8.3-curl_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-curl (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../11-php8.3-bz2_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-bz2 (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../12-libapache2-mod-php8.3_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking libapache2-mod-php8.3 (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../13-php8.3-cli_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-cli (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../14-php8.3-common_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_amd64.deb ...
+Unpacking php8.3-common (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../15-php8.3_8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c_all.deb ...
+Unpacking php8.3 (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) over (8.3.35-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../16-php8.4-zip_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-zip (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../17-php8.4-xml_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-xml (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../18-php8.4-readline_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-readline (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../19-php8.4-pgsql_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-pgsql (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../20-php8.4-opcache_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-opcache (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../21-php8.4-mysql_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-mysql (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../22-php8.4-mbstring_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-mbstring (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../23-php8.4-intl_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-intl (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../24-php8.4-gd_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-gd (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../25-php8.4-cli_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-cli (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../26-php8.4-fpm_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-fpm (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../27-php8.4-curl_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-curl (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../28-php8.4-bcmath_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-bcmath (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Preparing to unpack .../29-php8.4-common_8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9_amd64.deb ...
+Unpacking php8.4-common (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) over (8.4.26-1+ubuntu22.04.1+deb.sury.org+1) ...
+Setting up php-common (2:101+0~20261021.78+ubuntu22.04~1.gbp53f25f) ...
+Setting up php8.4-common (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.3-common (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up php8.4-gd (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.4-curl (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.3-zip (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up php8.4-pgsql (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.3-mbstring (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up php8.4-bcmath (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.3-readline (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up php8.4-zip (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.3-bz2 (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up php8.3-xml (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up php8.3-opcache (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up php8.4-xml (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.4-opcache (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.3-gd (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up php8.4-intl (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.4-readline (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.3-curl (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up php8.4-mbstring (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.3-pgsql (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up php8.4-mysql (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.3-intl (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up php8.3-cli (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up libapache2-mod-php8.3 (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+libapache2-mod-php8.3: not switching MPM - already enabled
+Setting up php8.4-cli (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Setting up php8.3-fpm (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+NOTICE: Not enabling PHP 8.3 FPM by default.
+NOTICE: To enable PHP 8.3 FPM in Apache2 do:
+NOTICE: a2enmod proxy_fcgi setenvif
+NOTICE: a2enconf php8.3-fpm
+NOTICE: You are seeing this message because you have apache2 package installed.
+Setting up php8.3 (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Setting up php8.4-fpm (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+NOTICE: Not enabling PHP 8.4 FPM by default.
+NOTICE: To enable PHP 8.4 FPM in Apache2 do:
+NOTICE: a2enmod proxy_fcgi setenvif
+NOTICE: a2enconf php8.4-fpm
+NOTICE: You are seeing this message because you have apache2 package installed.
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for php8.3-cli (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Processing triggers for libapache2-mod-php8.3 (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+Processing triggers for php8.4-cli (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+Processing triggers for php8.3-fpm (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c) ...
+NOTICE: Not enabling PHP 8.3 FPM by default.
+NOTICE: To enable PHP 8.3 FPM in Apache2 do:
+NOTICE: a2enmod proxy_fcgi setenvif
+NOTICE: a2enconf php8.3-fpm
+NOTICE: You are seeing this message because you have apache2 package installed.
+Processing triggers for php8.4-fpm (8.4.27-1+0~20261021.57+ubuntu22.04~1.gbp7636b9) ...
+NOTICE: Not enabling PHP 8.4 FPM by default.
+NOTICE: To enable PHP 8.4 FPM in Apache2 do:
+NOTICE: a2enmod proxy_fcgi setenvif
+NOTICE: a2enconf php8.4-fpm
+NOTICE: You are seeing this message because you have apache2 package installed.
+
+Pending kernel upgrade!
+
+Running kernel version:
+  6.2.0-1010-aws
+
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 6.8.0-1066-aws.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting. [Return]
+
+Services to be restarted:
+ systemctl restart apache2.service
+ systemctl restart supervisor.service
+
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart getty@tty1.service
+ systemctl restart networkd-dispatcher.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+
+## 5. Riavvii
+apache2 riavviato (mod_php)
+laravel-ai-elaboration:laravel-ai-elaboration_02: stopped
+laravel-ai-elaboration:laravel-ai-elaboration_05: stopped
+laravel-ai-elaboration:laravel-ai-elaboration_06: stopped
+laravel-crawler:laravel-crawler_00: stopped
+laravel-crawler:laravel-crawler_03: stopped
+laravel-crawler:laravel-crawler_05: stopped
+laravel-ai-elaboration:laravel-ai-elaboration_00: stopped
+laravel-ai-elaboration:laravel-ai-elaboration_01: stopped
+laravel-ai-elaboration:laravel-ai-elaboration_03: stopped
+laravel-ai-elaboration:laravel-ai-elaboration_04: stopped
+laravel-ai-elaboration:laravel-ai-elaboration_07: stopped
+laravel-crawler:laravel-crawler_01: stopped
+laravel-crawler:laravel-crawler_02: stopped
+laravel-crawler:laravel-crawler_04: stopped
+laravel-crawler:laravel-crawler_06: stopped
+laravel-crawler:laravel-crawler_07: stopped
+laravel-ai-elaboration:laravel-ai-elaboration_00: started
+laravel-ai-elaboration:laravel-ai-elaboration_01: started
+laravel-ai-elaboration:laravel-ai-elaboration_02: started
+laravel-ai-elaboration:laravel-ai-elaboration_03: started
+laravel-ai-elaboration:laravel-ai-elaboration_04: started
+laravel-ai-elaboration:laravel-ai-elaboration_05: started
+laravel-ai-elaboration:laravel-ai-elaboration_06: started
+laravel-ai-elaboration:laravel-ai-elaboration_07: started
+laravel-crawler:laravel-crawler_00: started
+laravel-crawler:laravel-crawler_01: started
+laravel-crawler:laravel-crawler_02: started
+laravel-crawler:laravel-crawler_03: started
+laravel-crawler:laravel-crawler_04: started
+laravel-crawler:laravel-crawler_05: started
+laravel-crawler:laravel-crawler_06: started
+laravel-crawler:laravel-crawler_07: started
+supervisor: restart all
+
+## 6. Verifica
+OK    PHP 8.3: changelog cita i CVE
+OK    PHP 8.4: changelog cita i CVE
+  php8.3       PHP 8.3.36 (cli) (built: Oct 21 2026 08:17:44) (NTS)
+  php-fpm8.3   PHP 8.3.36 (fpm-fcgi) (built: Oct 21 2026 08:17:44)
+  php8.4       PHP 8.4.27 (cli) (built: Oct 21 2026 08:18:37) (NTS)
+  php-fpm8.4   PHP 8.4.27 (fpm-fcgi) (built: Oct 21 2026 08:18:37) (NTS)
+OK    stesse estensioni caricate di prima
+OK    nessun processo sul PHP vecchio
+
+===== ip-10-10-10-138: AGGIORNATO =====

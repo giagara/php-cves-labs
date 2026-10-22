@@ -1,0 +1,72 @@
+===== lgt-gamification-pr — 2026-10-22 07:18:37 — APPLY =====
+
+## 1. Stato attuale
+  php8.3       PHP 8.3.35 (cli) (built: Sep 25 2026 05:24:11) (NTS)
+  php-fpm8.3   PHP 8.3.35 (fpm-fcgi) (built: Sep 25 2026 05:24:11)
+
+## 2. Repository Ondřej
+  /etc/apt/sources.list.d/lgt-sury-php.list
+  /etc/apt/sources.list.d/ondrej-ubuntu-apache2-jammy.list
+  /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list
+--- apt-get update (solo Ondřej) ---
+Get:1 https://packages.sury.org/php jammy InRelease [6112 B]
+Get:2 https://packages.sury.org/php jammy/main arm64 Packages [143 kB]
+Hit:3 https://ppa.launchpadcontent.net/ondrej/apache2/ubuntu jammy InRelease
+Hit:4 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Fetched 149 kB in 0s (354 kB/s)
+Reading package lists...
+indici aggiornati
+
+## 3. Pacchetti
+PHP + estensioni incluse: libapache2-mod-php8.3 php-common php8.3 php8.3-bz2 php8.3-cli php8.3-common php8.3-curl php8.3-fpm php8.3-gd php8.3-intl php8.3-mbstring php8.3-mysql php8.3-opcache php8.3-readline php8.3-xml php8.3-zip
+PECL (non bloccanti):    nessuna
+  PHP 8.3  installato 8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d disponibile 8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d
+        ↳ la versione disponibile è < 8.3.36: patch non nei repository (Ondřej in ritardo? provare --add-sury)
+Simulazione:
+
+## 4. Installazione
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libapache2-mod-php8.3 is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php-common is already the newest version (2:101+0~20261021.78+ubuntu22.04~1.gbp53f25f).
+php8.3 is already the newest version (8.3.36-1+0~20261021.88+ubuntu22.04~1.gbp250f7c).
+php8.3-bz2 is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php8.3-cli is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php8.3-common is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php8.3-curl is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php8.3-fpm is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php8.3-gd is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php8.3-intl is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php8.3-mbstring is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php8.3-mysql is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php8.3-opcache is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php8.3-readline is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php8.3-xml is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+php8.3-zip is already the newest version (8.3.35-1+0~20260925.87+ubuntu22.04~1.gbp19383d).
+The following packages were automatically installed and are no longer required:
+  debsuryorg-archive-keyring libgraphite2-3 libharfbuzz0b libraqm0
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 44 not upgraded.
+
+## 5. Riavvii
+php8.3-fpm riavviato
+apache2 riavviato (mod_php)
+laravel-worker:laravel-worker_00: stopped
+laravel-worker:laravel-worker_01: stopped
+laravel-worker:laravel-worker_02: stopped
+laravel-worker:laravel-worker_03: stopped
+laravel-worker:laravel-worker_00: started
+laravel-worker:laravel-worker_01: started
+laravel-worker:laravel-worker_02: started
+laravel-worker:laravel-worker_03: started
+supervisor: restart all
+
+## 6. Verifica
+KO    PHP 8.3: 8.3.35 non patchato
+  php8.3       PHP 8.3.35 (cli) (built: Sep 25 2026 05:24:11) (NTS)
+  php-fpm8.3   PHP 8.3.35 (fpm-fcgi) (built: Sep 25 2026 05:24:11)
+OK    stesse estensioni caricate di prima
+OK    nessun processo sul PHP vecchio
+
+===== lgt-gamification-pr: CONTROLLA LE RIGHE KO =====

@@ -53,7 +53,8 @@ php-up-2026/
 │   ├── poc1_109619.py              # PoC standalone — bug "inner" (current_file_bytes_processed)
 │   ├── poc_trigger.py              # Trigger minimale (258 byte, il payload esatto del writeup)
 │   ├── rce_poc.py                  # PoC RCE completo (crash UAF + session injection + LFI)
-│   └── server_audit.sh             # Audit di sicurezza completo per server in produzione
+│   ├── server_audit.sh             # Audit di sicurezza completo per server in produzione
+│   └── php_update_plesk.sh         # Aggiornamento PHP per server Plesk (update + riavvio)
 │
 ├── check_vuln.sh                   # Check rapido: il mio PHP è vulnerabile?
 ├── mitigate_apache.sh              # Applicazione automatica mitigazione Apache (.htaccess)
@@ -300,6 +301,34 @@ sudo bash mitigate_apache.sh --remove
 ```
 
 > **Attenzione:** questa regola blocca TUTTI gli upload di file. Usarla solo come mitigazione temporanea fino all'aggiornamento di PHP.
+
+### `bin/php_update_plesk.sh` — Aggiornamento PHP per Plesk
+
+Aggiorna tutte le versioni PHP installate su un server Plesk Obsidian alle versioni patchate per CVE-2026-109618/619. Basato su [`php_update.sh`](https://github.com/giagara/php-cves-labs/blob/main/bin/php_update.sh), adattato per i percorsi e i pacchetti Plesk.
+
+```bash
+# Solo verifica (read-only, non modifica nulla)
+sudo bash bin/php_update_plesk.sh --check
+
+# Dry-run (mostra cosa farebbe)
+sudo bash bin/php_update_plesk.sh --dry-run
+
+# Aggiornamento completo + riavvio servizi
+sudo bash bin/php_update_plesk.sh
+```
+
+Lo script esegue 9 step:
+1. **Stato attuale** — rileva tutte le versioni in `/opt/plesk/php/` e confronta con le versioni patchate
+2. **Aggiornamento indice** — `apt-get update` o `yum makecache`
+3. **Aggiornamento pacchetti** — aggiorna solo i pacchetti `plesk-phpXY-*` già installati (non installa versioni nuove, mantiene i php.ini con `--force-confold`)
+4. **Riavvio PHP-FPM** — riavvia i servizi `plesk-phpXY-fpm`
+5. **Riavvio web server** — reload di Apache/nginx
+6. **Riavvio supervisor** — restart di Horizon, Reverb, Octane, code worker
+7. **Verifica post-update** — confronta CLI e FPM con le versioni minime
+8. **Processi stale** — cerca processi PHP ancora sul binario vecchio (`(deleted)`)
+9. **Mitigazione EOL** — per PHP 7.x/8.0/8.1 verifica che `upload_progress.enabled=Off`
+
+Supporta **apt** (Debian/Ubuntu), **yum** e **dnf** (CentOS/AlmaLinux/Rocky).
 
 ### `public_pocs/exploit_chain_a.py` — Chain A (injection + LFI)
 
